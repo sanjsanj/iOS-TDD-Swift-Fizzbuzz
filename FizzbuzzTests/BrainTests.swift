@@ -23,32 +23,52 @@ class BrainTests: XCTestCase {
     }
     
     func testIsDivisibleByThree() {
-        let result = brain.isDivisibleByThree(3)
+        let result = brain.isDivisibleBy(3, number: 3)
         XCTAssertEqual(result, true)
     }
     
     func testIsNotDivisibleByThree() {
-        let result = brain.isDivisibleByThree(1)
+        let result = brain.isDivisibleBy(3, number: 1)
         XCTAssertEqual(result, false)
     }
     
     func testIsDivisibleByFive() {
-        let result = brain.isDivisibleByFive(5)
+        let result = brain.isDivisibleBy(5, number: 5)
         XCTAssertEqual(result, true)
     }
     
     func testIsNotDivisibleByFive() {
-        let result = brain.isDivisibleByFive(1)
+        let result = brain.isDivisibleBy(5, number: 1)
         XCTAssertEqual(result, false)
     }
     
     func testIsDivisibleByFifteen() {
-        let result = brain.isDivisibleByFifteen(15)
+        let result = brain.isDivisibleBy(15, number: 15)
         XCTAssertEqual(result, true)
     }
     
     func testIsNotDivisibleByFifteen() {
-        let result = brain.isDivisibleByFifteen(1)
+        let result = brain.isDivisibleBy(15, number: 1)
         XCTAssertEqual(result, false)
+    }
+    
+    func testSayFizz() {
+        let result = brain.check(3)
+        XCTAssertEqual(result, "Fizz")
+    }
+    
+    func testSayBuzz() {
+        let result = brain.check(5)
+        XCTAssertEqual(result, "Buzz")
+    }
+    
+    func testSayFizzbuzz() {
+        let result = brain.check(15)
+        XCTAssertEqual(result, "Fizzbuzz")
+    }
+    
+    func testSayNumber() {
+        let result = brain.check(1)
+        XCTAssertEqual(result, "1")
     }
 }
