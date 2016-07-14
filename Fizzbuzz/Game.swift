@@ -19,7 +19,10 @@ class Game: NSObject {
     }
     
     func play(move: String) -> Bool {
-        score += 1
-        return move == brain.check(score)
+        let result = move == brain.check(score)
+        if (result) {
+            score += 1
+        }
+        return result
     }
 }
